@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load tailwind_filters %}
+
+{% block content %}
+<div class="max-w-lg mx-auto">
+    <a class="hover:text-blue-500" href="{% url 'leads:category-list' %}">Go back to categories</a>
+    <h1 class="text-4xl text-gray-700 mt-3 mb-3">Create a new category</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button class="w-full bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded text-white mb-3" type="submit">Submit
+        </button>
+    </form>
+</div>
+{% endblock content %}
+

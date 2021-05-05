@@ -1,0 +1,23 @@
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django CRM</title>
+    {% tailwind_css %}
+</head>
+<body>
+
+<div class="max-w-7xl mx-auto">
+    {% include 'navbar.html' %}
+    {% include 'messages.html' %}
+    {% block content %}
+    {% endblock content %}
+</div>
+
+{% block scripts %}
+    {% include 'scripts.html' %}
+{% endblock scripts %}
+</body>
+</html>
